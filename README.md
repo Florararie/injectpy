@@ -2,7 +2,9 @@
 A lightweight DLL injector for Windows written in Python.
 
 > [!WARNING]
-> Windows Defender Note: To avoid Windows Defender flagging, this module disables .pyc bytecode generation only for itself, so you can use it safely alongside other Python modules.
+> To avoid a Windows Defender false positive, this module disables .pyc bytecode generation only for itself, so you can use it safely alongside other Python modules.
+> 
+> You may still get a warning if globally installing the package for the first time though.
 
 ## Features
 - Inject DLLs into processes by PID or process name
