@@ -25,25 +25,30 @@ pip install .
 Command-Line
 
 ```cmd
-usage: injectpy [-h] [--index INDEX] [--timeout TIMEOUT] [--verbose] target dll
+usage: injectpy [-h] [--index INDEX] [--timeout TIMEOUT] [--verbose] (--inject | --eject | --status | --list) [--force] target [dll]
 
-injectpy DLL injection
+injectpy DLL injection tool
 
 positional arguments:
   target             PID (int) or process name (str)
-  dll                Path to DLL to inject
+  dll                Path to DLL to inject/eject
 
 options:
   -h, --help         show this help message and exit
   --index INDEX      Which process index if multiple
   --timeout TIMEOUT  Timeout in ms (default 5000)
   --verbose          Enable verbose logging
+  --inject           Inject the DLL
+  --eject            Eject the DLL
+  --status           Check if the DLL is loaded
+  --list             List processes for the target name
+  --force            Force reinject by ejecting first if already loaded
 ```
 
 Example
 
 ```cmd
-injectpy notepad.exe C:\path\to\my.dll --index 0 --timeout 5000 --verbose
+injectpy notepad.exe C:\path\to\my.dll --verbose --inject --timeout 5000 --index 0
 ```
 
 Python API

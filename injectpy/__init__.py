@@ -1,5 +1,4 @@
 import sys
-from importlib import import_module, util
 from contextlib import contextmanager
 
 __all__ = ["Injector", "InjectionResult", "ProcessUtils"]
@@ -18,5 +17,5 @@ def _suppress_bytecode_for_module(module_name: str):
 
 
 with _suppress_bytecode_for_module("injectpy"):
-    from .injector import Injector, InjectionResult
-    from .process_utils import ProcessUtils
+    from injectpy.injector import Injector, InjectionResult
+    from injectpy.process_utils import ProcessUtils
