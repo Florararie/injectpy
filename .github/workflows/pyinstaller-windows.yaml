@@ -19,6 +19,7 @@ jobs:
       - name: Install Dependencies
         run: |
           pip install psutil
+          pip install pyside6
           pip install git+https://github.com/Florararie/injectpy.git#egg=injectpy
           pip install pyinstaller
 
